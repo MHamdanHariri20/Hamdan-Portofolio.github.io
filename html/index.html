@@ -37,41 +37,6 @@
     <span class="ti-arrow-up"></span>
   </div>
   
-  <!-- Setting button -->
-  <div class="config">
-    <div class="template-config">
-      <!-- Settings -->
-      <div class="d-block">
-        <button class="btn btn-fab btn-sm" id="sideel" title="Settings"><span class="ti-settings"></span></button>
-      </div>
-      <!-- Puschase -->
-      <div class="d-block">
-        <a href="https://macodeid.com/projects/virtual-folio/" class="btn btn-fab btn-sm" title="Get this template" data-toggle="tooltip" data-placement="left"><span class="ti-download"></span></a>
-      </div>
-      <!-- Help -->
-      <div class="d-block">
-        <a href="#" class="btn btn-fab btn-sm" title="Help" data-toggle="tooltip" data-placement="left"><span class="ti-help"></span></a>
-      </div>
-    </div>
-    <div class="set-menu">
-      <p>Select Color</p>
-      <div class="color-bar" data-toggle="selected">
-        <span class="color-item bg-theme-red selected" data-class="theme-red"></span>
-        <span class="color-item bg-theme-blue" data-class="theme-blue"></span>
-        <span class="color-item bg-theme-green" data-class="theme-green"></span>
-        <span class="color-item bg-theme-orange" data-class="theme-orange"></span>
-        <span class="color-item bg-theme-purple" data-class="theme-purple"></span>
-      </div>
-      <select class="custom-select d-block my-2" id="change-page">
-        <option value="">Choose Page</option>
-        <option value="index">Topbar</option>
-        <option value="blog-topbar">Blog (Topbar)</option>
-        <option value="index-2">Minibar</option>
-        <option value="blog-minibar">Blog (Minibar)</option>
-      </select>
-    </div>
-  </div>
-  
   <div class="vg-page page-home" id="home" style="background-image: url(../assets/img/bg_image_1.jpg)">
     <!-- Navbar -->
     <div class="navbar navbar-expand-lg navbar-dark sticky" data-offset="500">
@@ -123,14 +88,14 @@
         <div class="col-lg-6 offset-lg-1 wow fadeInRight">
           <h1 class="fw-light">Muhammad Hamdan Hariri</h1>
           <h5 class="fg-theme mb-3">Full-stack Developer</h5>
-          <p class="text-muted">As a fresh graduate, I have completed my education at Wikrama Vocational High School as a Programmer. Currently, I am interested in exploring and deepening the field of Front-end Developer, and I also actively play a role as a Web Developer and UI/UX Designer.</p>
+          <p class="text-muted">As a recent graduate, I have completed my education at Wikrama Vocational High School as a Programmer. Currently, I am interested in exploring and deepening the field of Full Stack Developer, especially as Front-end and Back end Web.</p>
           <ul class="theme-list">
             <li><b>From:</b> Bogor, Indonesia</li>
             <li><b>Lives In:</b> Bogor, Indonesia</li>
             <li><b>Age:</b> 18</li>
             <li><b>Gender:</b> Male</li>
           </ul>
-          <button class="btn btn-theme-outline">Download CV</button>
+          <button id="downloadPDF" class="btn btn-theme-outline">Download CV</button>
         </div>
       </div>
     </div>
@@ -285,7 +250,7 @@
               <span class="ti-desktop"></span>
             </div>
             <div class="caption">
-              <h4 class="fg-theme">Web Dev</h4>
+              <h4 class="fg-theme">Full-Stack Web</h4>
               <p>Create a dynamic website system (display, database, back-end code) in Laravel</p>
             </div>
           </div>
@@ -326,7 +291,7 @@
       <div class="filterable-button py-3 wow fadeInUp" data-toggle="selected">
         <button class="btn btn-theme-outline selected" data-filter="*">All</button>
         <button class="btn btn-theme-outline" data-filter=".front-end">Front-end</button>
-        <button class="btn btn-theme-outline" data-filter=".web">Web System</button>
+        <button class="btn btn-theme-outline" data-filter=".web">Full-Stack Web</button>
         <button class="btn btn-theme-outline" data-filter=".slicing">Slicing</button>
         <button class="btn btn-theme-outline" data-filter=".ui-ux">UI/UX</button>
       </div>
@@ -360,11 +325,11 @@
           </div>
         </div>
         <div class="grid-item web wow zoomIn">
-          <div class="img-place" data-src="../assets/img/Screenshot (373).png" data-fancybox data-caption="<h5 class='fg-theme'>Ecommerce Web</h5> <p>Web Developer</p>">
+          <div class="img-place" data-src="../assets/img/Screenshot (373).png" data-fancybox data-caption="<h5 class='fg-theme'>Ecommerce Web</h5> <p>Full-Stack Web</p>">
             <img src="../assets/img/Screenshot (373).png" alt="">
             <div class="img-caption">
               <h5 class="fg-theme">Ecommerce Web</h5>
-              <p>Web Developer</p>
+              <p>Full-Stack Web</p>
             </div>
           </div>
         </div>
@@ -378,11 +343,11 @@
           </div>
         </div>
         <div class="grid-item web wow zoomIn">
-          <div class="img-place" data-src="../assets/img/Screenshot (368).png" data-fancybox data-caption="<h5 class='fg-theme'>P5 Attendance Web</h5> <p>Web Developer</p>">
+          <div class="img-place" data-src="../assets/img/Screenshot (368).png" data-fancybox data-caption="<h5 class='fg-theme'>P5 Attendance Web</h5> <p>Full-Stack Web</p>">
             <img src="../assets/img/Screenshot (368).png" alt="">
             <div class="img-caption">
               <h5 class="fg-theme">P5 Attendance Web</h5>
-              <p>Web Developer</p>
+              <p>Full-Stack Web</p>
             </div>
           </div>
         </div>
@@ -474,6 +439,35 @@
   <script src="../assets/js/topbar-virtual.js"></script>
 
   <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAIA_zqjFMsJM_sxP9-6Pde5vVCTyJmUHM&callback=initMap"></script>
+
+  <script>
+    document.getElementById("downloadPDF").addEventListener("click", function() {
+        // Ubah URL file PDF sesuai dengan lokasi dan nama file Anda
+        var fileUrl = "../assets/img/CV_Muhammad Hamdan Hariri.pdf";
+        
+        // Membuat elemen anchor
+        var a = document.createElement("a");
+        
+        // Mengatur atribut href untuk file PDF
+        a.href = fileUrl;
+        
+        // Menetapkan atribut download sehingga browser akan mengunduh file daripada menavigasi ke URL
+        a.setAttribute("download", "");
+        
+        // Menyembunyikan elemen anchor
+        a.style.display = "none";
+        
+        // Menambahkan elemen anchor ke dalam dokumen
+        document.body.appendChild(a);
+        
+        // Klik pada elemen anchor untuk memulai pengunduhan
+        a.click();
+        
+        // Menghapus elemen anchor setelah pengunduhan selesai
+        document.body.removeChild(a);
+    });
+</script>
+
   
 </body>
 </html>
